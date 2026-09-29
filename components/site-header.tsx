@@ -76,13 +76,8 @@ export function SiteHeader() {
           >
             <Search className="size-5" />
           </Button>
-          <Button
-            render={<Link href="/Dashboard" />}
-            nativeButton={false}
-            className="hidden h-10 px-4 lg:inline-flex"
-          >
-            View Dashboard
-          </Button>
+         
+          
           <Button
             variant="outline"
             size="icon"

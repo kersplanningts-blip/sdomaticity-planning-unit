@@ -35,25 +35,7 @@ export function Hero() {
             Dashboard for Analytics, Tracking, and Access.
           </p>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button
-              render={<a href="#dashboard" />}
-              nativeButton={false}
-              className="h-12 gap-2 px-6 text-base bg-accent text-accent-foreground hover:bg-accent/90"
-            >
-              <BarChart3 className="size-5" />
-              View Dashboard
-            </Button>
-            <Button
-              render={<a href="#downloads" />}
-              nativeButton={false}
-              variant="outline"
-              className="h-12 gap-2 px-6 text-base border-primary-foreground/30 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
-            >
-              <Download className="size-5" />
-              Download Forms
-            </Button>
-          </div>
+          
         </div>
 
         <dl className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-primary-foreground/15 bg-primary-foreground/10 md:grid-cols-4">

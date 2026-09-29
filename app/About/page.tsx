@@ -1,3 +1,35 @@
+import {
+  BarChart3,
+  Database,
+  ClipboardCheck,
+  HandHelping,
+  FileBarChart,
+  FileText,
+} from "lucide-react";
+import Image from "next/image";
+import OrganizationalChart from "@/components/about/OrganizationalChart";
+const teamMembers = [
+  {
+    name: "Dr. Winnie E. Batoon, CESO V",
+    position: "Schools Division Superintendent",
+    image: "/team/sds.jpg",
+  },
+  {
+    name: "Name of ASDS",
+    position: "Assistant Schools Division Superintendent",
+    image: "/team/asds.jpg",
+  },
+  {
+    name: "Name of Planning Officer",
+    position: "Planning Officer",
+    image: "/team/planning-officer.jpg",
+  },
+  {
+    name: "Name of Administrative Support",
+    position: "Administrative Support",
+    image: "/team/admin-support.jpg",
+  },
+];
 export default function AboutUsPage() {
   const offices = [
     {
@@ -43,84 +75,61 @@ export default function AboutUsPage() {
   return (
     <main className="min-h-screen bg-white text-slate-800">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-blue-950 via-blue-800 to-sky-700">
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-24">
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-blue-200">
-            Department of Education
-          </p>
+     <section
+  className="relative bg-cover bg-center"
+  style={{
+    backgroundImage: "url('/planning-unit.jpg')",
+  }}
+>
+  <div className="absolute inset-0 bg-blue-950/65"></div>
+  <div className="relative z-10 mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
 
-          <h1 className="mt-4 max-w-4xl text-4xl font-bold leading-tight text-white md:text-6xl">
-            Schools Division Office of Mati City
-          </h1>
+    <div className="grid lg:grid-cols-2 gap-20 items-start">
 
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-blue-100">
-            Committed to delivering accessible, inclusive, and quality basic
-            education for every learner in the City of Mati.
-          </p>
-        </div>
-      </section>
+      {/* LEFT SIDE */}
+      <div>
+        <p className="text-sm font-bold uppercase tracking-[0.2em] text-yellow-300">
+          Schools Division Office of Mati City
+        </p>
 
-      {/* Profile */}
-      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
-          <div>
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-blue-700">
-              Division Profile
-            </p>
-            <h2 className="mt-3 text-3xl font-bold text-blue-950 md:text-4xl">
-              Serving the learners of Mati City
-            </h2>
-          </div>
+        <h1 className="mt-4 text-6xl font-extrabold text-white">
+          Planning Unit
+        </h1>
+      </div>
 
-          <div className="space-y-5 text-lg leading-8 text-slate-600">
-            <p>
-              The Schools Division Office of Mati City is a field office of the
-              Department of Education responsible for overseeing public schools
-              and educational programs within the City of Mati.
-            </p>
+      {/* RIGHT SIDE */}
+      <div className="space-y-6 text-lg leading-8 text-blue-100">
 
-            <p>
-              We work with school leaders, teachers, learners, parents, local
-              government units, and community partners to create learning
-              environments where every learner can thrive.
-            </p>
+        <p>
+          The Planning Unit is responsible for coordinating planning
+          activities, policy implementation, educational statistics, and
+          data management within the Schools Division Office of Mati City.
+        </p>
 
-            <p>
-              Through responsive governance, effective programs, and
-              data-informed decision-making, the division continuously works to
-              improve access, quality, and equity in basic education.
-            </p>
-          </div>
-        </div>
+        <p>
+          It supports school heads and district offices by providing
+          reliable data, technical assistance, monitoring tools, and
+          planning guidelines.
+        </p>
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          <article className="rounded-xl border border-blue-100 bg-blue-50 p-6">
-            <p className="text-sm font-semibold text-slate-500">
-              Public Schools
-            </p>
-            <p className="mt-3 text-4xl font-bold text-blue-950">72</p>
-          </article>
+        <p>
+          The unit oversees the collection, validation, analysis, and
+          reporting of educational data through systems such as LIS,
+          BEIS, Quick Count, School Profiles, and KPIs.
+        </p>
 
-          <article className="rounded-xl border border-blue-100 bg-blue-50 p-6">
-            <p className="text-sm font-semibold text-slate-500">Quick Count Learners</p>
-            <p className="mt-3 text-4xl font-bold text-blue-950">41,694</p>
-          </article>
+        <p>
+          Through evidence-based planning, the unit helps ensure that
+          decisions and resource allocations respond to the actual needs
+          of schools and learners.
+        </p>
 
-          <article className="rounded-xl border border-blue-100 bg-blue-50 p-6">
-            <p className="text-sm font-semibold text-slate-500">
-              Teaching Personnel
-            </p>
-            <p className="mt-3 text-4xl font-bold text-blue-950"> 1,791</p>
-          </article>
+      </div>
 
-          <article className="rounded-xl border border-blue-100 bg-blue-50 p-6">
-            <p className="text-sm font-semibold text-slate-500">
-              Barangays Served
-            </p>
-            <p className="mt-3 text-4xl font-bold text-blue-950">26</p>
-          </article>
-        </div>
-      </section>
+    </div>
+
+  </div>
+</section>
 
       {/* Vision Mission */}
       <section className="bg-slate-50 px-6 py-20 lg:px-8">
@@ -161,82 +170,137 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      {/* Offices */}
-      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-        <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-          <div>
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-blue-700">
-              Our Offices
-            </p>
-            <h2 className="mt-3 text-3xl font-bold text-blue-950 md:text-4xl">
-              Working together for quality education
-            </h2>
-          </div>
+      {/* Planning Unit Functions */}
 
-          <p className="max-w-md text-slate-600">
-            Our offices work together to provide strategic leadership and
-            responsive support to all schools in the division.
-          </p>
-        </div>
+<section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
 
-        <div className="mt-12 grid gap-5 md:grid-cols-2">
-          {offices.map((office, index) => (
-            <article
-              key={office.title}
-              className="rounded-xl border border-slate-200 bg-white p-7 transition hover:border-blue-300 hover:shadow-md"
-            >
-              <span className="text-sm font-bold text-blue-400">
-                0{index + 1}
-              </span>
-              <h3 className="mt-4 text-xl font-bold text-blue-950">
-                {office.title}
-              </h3>
-              <p className="mt-3 leading-7 text-slate-600">
-                {office.description}
-              </p>
-            </article>
-          ))}
-        </div>
-      </section>
+  <div className="text-center">
 
-      {/* Leadership */}
-      <section className="bg-blue-50 px-6 py-20 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="text-center">
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-blue-700">
-              Leadership
-            </p>
-            <h2 className="mt-3 text-3xl font-bold text-blue-950 md:text-4xl">
-              Division Management Team
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-slate-600">
-              Dedicated leaders working to ensure responsive and effective
-              education services for every school and learner.
-            </p>
-          </div>
+    <p className="text-sm font-bold uppercase tracking-[0.18em] text-blue-700">
+      Core Functions
+    </p>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {leaders.map((leader) => (
-              <article
-                key={leader.position}
-                className="rounded-xl bg-white p-7 text-center shadow-sm"
-              >
-                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-blue-800 text-xl font-extrabold text-white">
-                  {leader.initials}
-                </div>
+    <h2 className="mt-3 text-4xl font-bold text-blue-950">
+      What the Planning Unit Does
+    </h2>
 
-                <h3 className="mt-5 text-lg font-bold text-blue-950">
-                  {leader.name}
-                </h3>
+    <p className="mt-4 text-slate-600 max-w-3xl mx-auto">
+      The Planning Unit provides planning, monitoring, data management,
+      and technical support to schools and offices throughout the division.
+    </p>
 
-                <p className="mt-2 text-sm font-medium text-blue-700">
-                  {leader.position}
-                </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+  </div>
+
+  <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+    <article className="rounded-2xl border p-8 shadow-sm hover:shadow-lg transition">
+
+<div className="mb-5 inline-flex rounded-2xl bg-blue-100 p-4">
+  <BarChart3 className="h-8 w-8 text-blue-700" />
+</div>
+
+      <h3 className="text-xl font-bold text-blue-900">
+        Educational Planning
+      </h3>
+
+      <p className="mt-4 text-slate-600">
+        Prepares annual plans, investment plans, and development
+        strategies for the Schools Division Office.
+      </p>
+
+    </article>
+
+    <article className="rounded-2xl border p-8 shadow-sm hover:shadow-lg transition">
+
+<div className="mb-5 inline-flex rounded-2xl bg-green-100 p-4">
+  <Database className="h-8 w-8 text-green-700" />
+</div>
+
+      <h3 className="text-xl font-bold text-blue-900">
+        Data Management
+      </h3>
+
+      <p className="mt-4 text-slate-600">
+        Manages educational databases including LIS, BEIS,
+        Quick Count, eSF7, NSBI, School Profiles and a lot more!.
+      </p>
+
+    </article>
+
+    <article className="rounded-2xl border p-8 shadow-sm hover:shadow-lg transition">
+
+<div className="mb-5 inline-flex rounded-2xl bg-yellow-100 p-4">
+  <ClipboardCheck className="h-8 w-8 text-yellow-700" />
+</div>
+
+      <h3 className="text-xl font-bold text-blue-900">
+        Monitoring & Evaluation
+      </h3>
+
+      <p className="mt-4 text-slate-600">
+        Monitors school performance and evaluates programs using
+        reliable educational indicators.
+      </p>
+
+    </article>
+
+    <article className="rounded-2xl border p-8 shadow-sm hover:shadow-lg transition">
+
+<div className="mb-5 inline-flex rounded-2xl bg-purple-100 p-4">
+  <HandHelping className="h-8 w-8 text-purple-700" />
+</div>
+
+      <h3 className="text-xl font-bold text-blue-900">
+        Technical Assistance
+      </h3>
+
+      <p className="mt-4 text-slate-600">
+        Provides technical support and planning assistance to
+        districts and schools.
+      </p>
+
+    </article>
+
+    <article className="rounded-2xl border p-8 shadow-sm hover:shadow-lg transition">
+
+<div className="mb-5 inline-flex rounded-2xl bg-red-100 p-4">
+  <FileBarChart className="h-8 w-8 text-red-700" />
+</div>
+
+      <h3 className="text-xl font-bold text-blue-900">
+        Performance Reporting
+      </h3>
+
+      <p className="mt-4 text-slate-600">
+        Consolidates reports, KPIs, and educational statistics for
+        evidence-based decision making.
+      </p>
+
+    </article>
+
+    <article className="rounded-2xl border p-8 shadow-sm hover:shadow-lg transition">
+
+<div className="mb-5 inline-flex rounded-2xl bg-cyan-100 p-4">
+  <FileText className="h-8 w-8 text-cyan-700" />
+</div>
+
+      <h3 className="text-xl font-bold text-blue-900">
+        Policy Support
+      </h3>
+
+      <p className="mt-4 text-slate-600">
+        Supports division management through policy analysis,
+        planning guidelines, and strategic recommendations.
+      </p>
+
+    </article>
+
+  </div>
+
+</section>
+
+{/* Organizational Structure */}
+<OrganizationalChart />
 
       {/* Closing */}
       <section className="bg-blue-950 px-6 py-16 lg:px-8">
